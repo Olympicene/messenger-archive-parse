@@ -1,3 +1,7 @@
+# Custom
+database/*
+Output.json
+
 # Logs
 logs
 *.log
