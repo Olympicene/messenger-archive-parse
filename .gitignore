@@ -1,7 +1,9 @@
 # Custom
 database/*
 Output.json
-
+Output.txt
+gpt_new.txt
+gpt.txt
 # Logs
 logs
 *.log

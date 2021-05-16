@@ -2,34 +2,23 @@ var path = require("path");
 const fs = require("fs");
 
 const databaseDir = path.resolve(__dirname + "/database/");
+var path = require("path");
+const fs = require("fs");
 
-
-
+var data = ''
 const length = fs.readdirSync(databaseDir).length
-
-var wrap = []
 
 for (var i = 1; i <= length; i++) {
     var file = JSON.parse(fs.readFileSync(databaseDir + `/message_${i}.json`));
 
-    var data = []
-
     for (var message in file.messages) {
-        if(data.length < 500) {
-            if ('content' in file.messages[message]) {
-                data.push(file.messages[message].content)
-            }
-        } else {
-            wrap.push(data)
-            data = []
+        if ('content' in file.messages[message]) {
+            data += file.messages[message].sender_name + ": " + file.messages[message].content + '\n'
         }
     }
-
-    wrap.push(data)
-    
 }
 
-fs.writeFile('Output.json', JSON.stringify(wrap, null, "\t"), (err) => {
+fs.writeFile('Output.txt', data, (err) => {
     if (err) return console.error(err);
 });
 
