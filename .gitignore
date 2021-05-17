@@ -2,6 +2,7 @@
 database/*
 Output.json
 Output.txt
+input.txt
 gpt_new.txt
 gpt.txt
 # Logs
