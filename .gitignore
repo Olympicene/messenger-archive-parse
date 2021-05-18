@@ -5,6 +5,8 @@ Output.txt
 input.txt
 gpt_new.txt
 gpt.txt
+gpt.json
+
 # Logs
 logs
 *.log
